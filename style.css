@@ -150,7 +150,12 @@ body {
   display: inline-block;
   margin-top: 10px;
 }
-
+.project-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
 footer {
   text-align: center;
   margin-top: 50px;
