@@ -40,6 +40,9 @@ body {
   border-radius: 50%;
   margin-bottom: 22px;
   border: 4px solid #e6eef7;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .profile h1 {
   font-size: 2rem;
