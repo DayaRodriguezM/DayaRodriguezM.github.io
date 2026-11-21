@@ -1,353 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portafolio | Dayana Rodríguez</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Portafolio de Dayana Rodríguez: proyectos de Data Analytics, Business Intelligence, SQL, Python y Tableau.">
+  <meta name="theme-color" content="#102c49">
+  <title>Dayana Rodríguez | Data Analytics & Business Intelligence</title>
+  <style>
+    .hero-layout{display:grid;grid-template-columns:minmax(0,1fr) 235px;gap:46px;align-items:center}.hero-copy{min-width:0}.hero-photo{position:relative;z-index:1}.hero-photo img{display:block;width:225px;height:225px;object-fit:cover;object-position:center top;border-radius:50%;border:5px solid rgba(255,255,255,.88);box-shadow:0 16px 45px rgba(0,0,0,.25)}@media(max-width:760px){.hero-layout{grid-template-columns:1fr;gap:26px}.hero-photo{grid-row:1}.hero-photo img{width:145px;height:145px}}
+
+    :root{--ink:#14304a;--muted:#52677a;--navy:#123b5e;--blue:#17649a;--line:#d9e5ef;--pale:#f4f8fc;--white:#fff;--accent:#25a8a0;--shadow:0 12px 32px rgba(21,52,82,.07)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f7fafc;color:var(--ink);font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.65}a{color:inherit}a:focus-visible,button:focus-visible{outline:3px solid #2f9be7;outline-offset:3px}.wrap{max-width:1150px;padding:0 26px;margin:0 auto}.skip{position:absolute;top:-60px;left:12px;background:white;padding:10px;z-index:10}.skip:focus{top:10px}
+    header{position:sticky;top:0;z-index:3;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:74px}.brand{font-weight:800;letter-spacing:-.03em;text-decoration:none;font-size:1.08rem}.brand span{color:var(--blue)}nav{display:flex;gap:23px;flex-wrap:wrap}nav a{font-size:.9rem;color:var(--muted);text-decoration:none;font-weight:600}nav a:hover{color:var(--blue)}
+    .hero{background:linear-gradient(120deg,#102f4d,#164c73 64%,#176078);color:#fff;padding:88px 0 76px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:350px;height:350px;border:1px solid rgba(255,255,255,.16);border-radius:50%;right:-60px;top:-130px;box-shadow:0 0 0 90px rgba(255,255,255,.025),0 0 0 170px rgba(255,255,255,.025);pointer-events:none}.eyebrow{font-size:.8rem;text-transform:uppercase;letter-spacing:.17em;color:#8bddd5;font-weight:800}.hero h1{font-size:clamp(2.6rem,6vw,4.6rem);line-height:1.07;letter-spacing:-.055em;margin:18px 0}.hero h1 span{color:#80dfd6}.hero p{max-width:720px;color:#d9eaf5;font-size:1.1rem}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:9px;padding:11px 18px;text-decoration:none;font-weight:700;font-size:.88rem;border:1px solid transparent;transition:transform .15s,background .15s}.btn:hover{transform:translateY(-2px)}.btn-light{background:#fff;color:var(--navy)}.btn-outline{border-color:#9bc6df;color:#fff}.btn-primary{background:var(--navy);color:#fff}.btn-secondary{border-color:var(--line);background:#fff;color:var(--navy)}
+    section{padding:68px 0}.section-kicker{font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--blue);font-size:.73rem}.section-heading{font-size:clamp(1.65rem,3.6vw,2.5rem);line-height:1.2;letter-spacing:-.04em;margin:7px 0 12px}.section-intro{color:var(--muted);max-width:760px;margin:0 0 30px}.about{background:#fff}.about-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:24px}.panel{padding:27px;border:1px solid var(--line);border-radius:15px;background:#fff;box-shadow:var(--shadow)}.panel h3{margin-top:0}.panel p{color:var(--muted)}.skills{display:flex;flex-wrap:wrap;gap:8px}.skill{border:1px solid #d6e5f1;background:#eff6fb;color:#1d527b;padding:5px 11px;border-radius:50px;font-size:.8rem;font-weight:700}
+    .projects{background:var(--pale)}.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.project-card{background:var(--white);border:1px solid var(--line);border-left:4px solid #2f719c;border-radius:15px;padding:25px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:13px;min-height:320px;transition:transform .2s,box-shadow .2s}.project-card:hover{transform:translateY(-3px);box-shadow:0 18px 44px rgba(21,52,82,.12)}.project-card.featured{border-left-color:var(--accent);background:linear-gradient(155deg,#fff 70%,#f1fcfa)}.project-top{display:flex;align-items:center;justify-content:space-between;gap:12px}.category{font-size:.72rem;color:#2c6b8b;font-weight:800;letter-spacing:.07em;text-transform:uppercase}.highlight{background:#dff7ee;color:#176b59;padding:3px 9px;border-radius:99px;font-size:.71rem;font-weight:800}.project-card h3{font-size:1.17rem;line-height:1.35;letter-spacing:-.02em;margin:0}.project-card p{font-size:.91rem;color:var(--muted);margin:0}.project-card .insight{border-top:1px solid var(--line);padding-top:12px;color:var(--ink)}.project-card .insight strong{color:#126f80}.card-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:auto;padding-top:8px}.card-actions .btn{padding:9px 13px;font-size:.8rem}.cta{background:#fff;text-align:center}.cta .panel{max-width:800px;margin:auto;background:#f4f9fc}footer{background:#102f4d;color:#d7e7f2;padding:25px 0;font-size:.86rem}footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}footer a{color:#d7e7f2}
+    @media(max-width:760px){.nav{align-items:flex-start;flex-direction:column;padding:14px 0;gap:6px}nav{gap:13px}.hero{padding:60px 0}.about-grid,.project-grid{grid-template-columns:1fr}section{padding:48px 0}.project-card{min-height:0}.wrap{padding:0 18px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.project-card{transition:none}}
+  </style>
 </head>
-
 <body>
-  <main class="container">
-
-    <section class="hero">
-      <div class="profile">
-        <img src="Foto_DayanaR.png?v=2" alt="Foto de Dayana Rodríguez" class="profile-img">
-        <h1>Dayana Rodríguez</h1>
-        <h2>Data Analyst | Business Intelligence | Data Quality | Automatización de Procesos</h2>
-</h2>
-        <p>
-          Portafolio de proyectos de análisis de datos, Business Intelligence,
-          calidad de datos y automatización de procesos.
-        </p>
-
-        <div class="links">
-          <a href="https://github.com/DayaRodriguezM" target="_blank">GitHub</a>
-          <a href="https://linkedin.com/in/dayanarodriguezmendez" target="_blank">LinkedIn</a>
-          <a href="mailto:dayanakarinarodriguezmendez@gmail.com">Email</a>
-        </div>
-      </div>
-
-      <div class="about">
-  <h2>Acerca de mí</h2>
-
-  <p>
-    Soy Analista de Datos con formación en Relaciones Industriales y más de 4 años
-    de experiencia trabajando con datos operativos, procesos críticos, calidad de
-    información y reportes en entornos de alta exigencia.
-  </p>
-
-  <p>
-    Mi experiencia combina conocimiento de negocio con herramientas como Python,
-    SQL, Power BI, Tableau, Excel avanzado y SAP ERP. Me enfoco en automatizar
-    procesos, integrar distintas fuentes, validar reglas de negocio y transformar
-    datos en indicadores y visualizaciones útiles para la toma de decisiones.
-  </p>
-
-  <p>
-    Actualmente estoy orientando mi desarrollo profesional hacia roles de Data Analyst
-    y Business Intelligence, con especial interés en calidad de datos, automatización,
-    análisis operativo y construcción de dashboards ejecutivos.
-  </p>
-
-  <h3>Habilidades tecnológicas</h3>
-
-  <div class="skills">
-    <span>Python</span>
-    <span>SQL</span>
-    <span>Power BI</span>
-    <span>Tableau</span>
-    <span>Excel</span>
-    <span>Power Query</span>
-    <span>DAX</span>
-    <span>ETL</span>
-    <span>EDA</span>
-    <span>GitHub</span>
-    <span>SAP ERP</span>
-  </div>
-</div>
-    </section>
-
-    <section class="projects">
-  <h2>Proyectos seleccionados</h2>
-
-  <!-- PROYECTO 1: ANTICIPOS -->
-  <article class="project-card">
-    <h3>Gestión y conciliación de solicitudes de anticipo en SAP</h3>
-
-    <p>
-      Proyecto aplicado a un proceso real de remuneraciones para automatizar
-      validaciones, conciliar solicitudes con registros SAP y analizar personas
-      y montos procesados mensualmente.
-    </p>
-
-    <p>
-      <strong>Objetivo:</strong> mejorar la trazabilidad del proceso e identificar
-      solicitudes registradas, duplicadas, anuladas, reemplazadas o fuera de corte.
-    </p>
-
-    <p>
-      <strong>Datos:</strong> solicitudes de intranet, vigencias SAP, estado contractual,
-      fechas de solicitud, montos, empresa y dependencia organizacional.
-    </p>
-
-    <p>
-      <strong>Proceso:</strong> automatización y consolidación de fuentes con Python,
-      aplicación de reglas de negocio, conciliación de registros, modelado de datos,
-      desarrollo de KPIs y construcción de dashboards en Power BI y Tableau.
-    </p>
-
-    <p>
-      <strong>Herramientas:</strong> Python, Power BI, Tableau, Power Query, DAX,
-      Excel y SAP ERP.
-    </p>
-
-    <p>
-      <strong>Resultados:</strong> se conciliaron 4.607 solicitudes de anticipo.
-      El 68,5 % fue registrado en SAP durante el mes correspondiente y el 72,3 %
-      generó procesamiento al incluir los registros programados para el mes siguiente.
-    </p>
-
-    <p>
-      <strong>Impacto:</strong> la solución permitió integrar solicitudes, vigencias
-      y pagos mensuales en una herramienta de control con mayor trazabilidad,
-      consistencia y capacidad de análisis.
-    </p>
-
-    <div class="project-links">
-      <a href="https://github.com/DayaRodriguezM/gestion-conciliacion-anticipos"
-         target="_blank">
-        Repositorio
-      </a>
-
-      <a href="https://public.tableau.com/views/GestinyResultadodeSolicitudesAnticipo2026/Dashboard1?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
-         target="_blank">
-        Dashboard
-      </a>
-    </div>
-  </article>
-
-
-  <!-- PROYECTO 2: RAPPIPLUS -->
-  <article class="project-card">
-    <h3>RappiPlus LATAM — Análisis de rentabilidad y desempeño comercial</h3>
-
-    <p>
-      Proyecto final de análisis de datos orientado a evaluar rentabilidad,
-      calidad de datos, funnel de conversión, cohortes de usuarios e impacto de cambios
-      mediante pruebas estadísticas.
-    </p>
-
-    <p>
-      <strong>Objetivo:</strong> identificar oportunidades de mejora comercial y operativa
-      a partir de datos de ventas, costos, marketing y comportamiento de usuarios.
-    </p>
-
-    <p>
-      <strong>Datos:</strong> órdenes, catálogo de productos, inversión de marketing
-      y eventos del funnel de conversión.
-    </p>
-
-    <p>
-      <strong>Proceso:</strong> limpieza y validación de datos, análisis exploratorio,
-      cálculo de KPIs, análisis de funnel, cohortes, A/B Testing y construcción
-      de dashboard ejecutivo.
-    </p>
-
-    <p>
-      <strong>Herramientas:</strong> Python, SQL, Power BI, Tableau, EDA, A/B Testing,
-      análisis de cohortes y calidad de datos.
-    </p>
-
-    <p>
-      <strong>Insights:</strong> el negocio mostró rentabilidad neta positiva,
-      margen de 29,87 % y oportunidades de mejora en productos y etapas críticas
-      del funnel.
-    </p>
-
-    <p>
-      <strong>Recomendación:</strong> monitorear productos con baja rentabilidad,
-      optimizar el paso hacia checkout y mantener seguimiento mensual de KPIs comerciales.
-    </p>
-
-    <div class="project-links">
-      <a href="https://github.com/DayaRodriguezM/rappiplus-dashboard-rentabilidad-tableau"
-         target="_blank">
-        Repositorio
-      </a>
-
-      <a href="https://public.tableau.com/app/profile/dayana.rodriguez3078/viz/Proyecto_Final_Dayana_Rodriguez/Overview"
-         target="_blank">
-        Dashboard
-      </a>
-    </div>
-  </article>
-
-
-  <!-- PROYECTO 3: UBER -->
-  <article class="project-card">
-    <h3>Uber | SQL Data Quality &amp; Profitability</h3>
-
-    <p>
-      Proyecto SQL enfocado en calidad de datos, rentabilidad operativa y análisis
-      de campañas de marketing a partir de datos de viajes de Uber.
-    </p>
-
-    <p>
-      <strong>Objetivo:</strong> identificar inconsistencias que pudieran afectar
-      la integración de datos y construir una base analítica confiable para el
-      cálculo de KPIs.
-    </p>
-
-    <p>
-      <strong>Datos:</strong> viajes, clientes, estados, vehículos, campañas,
-      ingresos, distancias y costos operativos.
-    </p>
-
-    <p>
-      <strong>Proceso:</strong> auditoría de calidad, análisis de claves duplicadas,
-      validación de JOINs, construcción de una base analítica depurada y análisis
-      de rentabilidad y ROMI.
-    </p>
-
-    <p>
-      <strong>Herramientas:</strong> SQL, CTEs, JOINs, agregaciones,
-      Google Sheets y GitHub.
-    </p>
-
-    <p>
-      <strong>Hallazgo:</strong> se detectaron 1.224 <code>booking_id</code>
-      repetidos que generaban una relación muchos-a-muchos y sobreestimaban
-      el margen operativo en 5,1 %.
-    </p>
-
-    <p>
-      <strong>Impacto:</strong> la depuración permitió trabajar con 147.543
-      registros confiables y calcular indicadores de ingresos, costos, margen
-      y desempeño de campañas sobre una base consistente.
-    </p>
-
-    <div class="project-links">
-      <a href="https://github.com/DayaRodriguezM/uber-2024-sql-data-quality-profitability"
-         target="_blank">
-        Repositorio
-      </a>
-    </div>
-  </article>
-
-
-  <!-- PROYECTO 4: DASHBOARD COMERCIAL -->
-  <article class="project-card">
-    <h3>Dashboard Comercial Regional 2024–2025</h3>
-
-    <p>
-      Proyecto de Business Intelligence orientado al análisis del desempeño comercial
-      en Perú, Chile y Colombia, considerando ingresos, margen bruto, unidades vendidas,
-      categoría, segmento y temporada.
-    </p>
-
-    <p>
-      <strong>Objetivo:</strong> identificar patrones de venta, variaciones estacionales
-      y oportunidades de optimización comercial a partir de indicadores clave de negocio.
-    </p>
-
-    <p>
-      <strong>Datos:</strong> transacciones comerciales, país, categoría, segmento,
-      temporada, ingresos, costos, unidades vendidas y margen bruto.
-    </p>
-
-    <p>
-      <strong>Proceso:</strong> limpieza y transformación de datos, modelado en esquema estrella,
-      creación de KPIs, análisis temporal, segmentación comercial y visualización ejecutiva
-      en Power BI y Tableau.
-    </p>
-
-    <p>
-      <strong>Herramientas:</strong> Power BI, Tableau, DAX, Power Query, modelo estrella
-      y storytelling con datos.
-    </p>
-
-    <p>
-      <strong>Insights:</strong> se identificaron caídas estacionales en invierno,
-      mejor desempeño en verano y diferencias relevantes por país, categoría y segmento.
-    </p>
-
-    <p>
-      <strong>Recomendación:</strong> monitorear la estacionalidad de ventas,
-      reforzar análisis por categoría y priorizar acciones comerciales en segmentos
-      con mayor oportunidad.
-    </p>
-
-    <div class="project-links">
-      <a href="https://github.com/DayaRodriguezM/dashboard-desempeno-comercial-tableau"
-         target="_blank">
-        Repositorio
-      </a>
-
-      <a href="https://public.tableau.com/app/profile/dayana.rodriguez3078/viz/Poyecto9_Dayana_Rodriguez/Overview"
-         target="_blank">
-        Dashboard
-      </a>
-    </div>
-  </article>
-
-
-  <!-- PROYECTO 5: REAL ESTATE -->
-  <article class="project-card">
-    <h3>Andes Capital Real Estate — Análisis comercial inmobiliario</h3>
-
-    <p>
-      Proyecto de Business Intelligence aplicado al análisis de ventas inmobiliarias,
-      ingresos, comisiones, cohortes de clientes, estacionalidad y desempeño comercial
-      por ciudad, canal y tipo de propiedad.
-    </p>
-
-    <p>
-      <strong>Objetivo:</strong> analizar el comportamiento de ventas y comisiones para
-      identificar patrones comerciales, concentración de ingresos y oportunidades de
-      seguimiento ejecutivo.
-    </p>
-
-    <p>
-      <strong>Datos:</strong> ventas de propiedades, clientes, fechas, ciudades,
-      tipo de propiedad, canal de venta, segmento de cliente, precio de venta y comisiones.
-    </p>
-
-    <p>
-      <strong>Proceso:</strong> limpieza y validación de datos, modelado en Power BI,
-      migración del dashboard a Tableau, creación de KPIs, análisis de participación,
-      estacionalidad y cohortes.
-    </p>
-
-    <p>
-      <strong>Herramientas:</strong> Power BI, Tableau, DAX, Power Query,
-      análisis de cohortes, KPIs comerciales y storytelling con datos.
-    </p>
-
-    <p>
-      <strong>Insights:</strong> se observaron patrones de ingresos por ciudad,
-      tipo de propiedad y canal de venta, además de oportunidades para analizar
-      recurrencia y comportamiento comercial por cohortes.
-    </p>
-
-    <p>
-      <strong>Recomendación:</strong> dar seguimiento a ciudades y canales con mayor
-      participación, monitorear la estacionalidad y usar cohortes para evaluar
-      comportamiento de clientes.
-    </p>
-
-    <div class="project-links">
-      <a href="https://github.com/DayaRodriguezM/dashboard-desempeno-inmobiliario-tableau"
-         target="_blank">
-        Repositorio
-      </a>
-
-      <a href="https://public.tableau.com/app/profile/dayana.rodriguez3078/viz/Poyecto10_Dayana_Rodriguez/Overview"
-         target="_blank">
-        Dashboard
-      </a>
-    </div>
-  </article>
-
-</section>
-      
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header><div class="wrap nav"><a class="brand" href="#inicio">Dayana <span>Rodríguez</span></a><nav aria-label="Navegación principal"><a href="#sobre-mi">Sobre mí</a><a href="#proyectos">Proyectos</a><a href="#contacto">Contacto</a></nav></div></header>
+<main id="contenido">
+ <div class="hero" id="inicio"><div class="wrap hero-layout"><div class="hero-copy"><div class="eyebrow">Data Analytics · Business Intelligence</div><h1>De los datos a<br><span>decisiones con impacto.</span></h1><p>Soy Dayana Rodríguez, profesional con más de 4 años de experiencia en remuneraciones y gestión de información. Combino conocimiento del negocio con Python, SQL y herramientas BI para validar datos, automatizar procesos y generar análisis útiles.</p><div class="actions"><a class="btn btn-light" href="#proyectos">Ver proyectos</a><a class="btn btn-outline" href="https://github.com/DayaRodriguezM" target="_blank" rel="noopener noreferrer">Mi GitHub ↗</a></div></div><div class="hero-photo"><img src="Foto_DayanaR.png" alt="Foto de Dayana Rodríguez" loading="eager"></div></div></div>
+ <section id="sobre-mi" class="about"><div class="wrap"><div class="section-kicker">Perfil profesional</div><h2 class="section-heading">Análisis, automatización y calidad de datos</h2><div class="about-grid"><article class="panel"><h3>Sobre mí</h3><p>Licenciada en Relaciones Industriales, con experiencia gestionando y validando información de remuneraciones y procesos de alto volumen. He ampliado mi perfil hacia Data Analytics y Business Intelligence mediante proyectos aplicados a operaciones, rentabilidad, clientes y control de calidad.</p><p>Me interesa conectar las necesidades del negocio con soluciones claras, medibles y reproducibles.</p></article><aside class="panel"><h3>Herramientas</h3><div class="skills"><span class="skill">Python</span><span class="skill">pandas</span><span class="skill">SQL Server</span><span class="skill">Power BI</span><span class="skill">DAX</span><span class="skill">Tableau</span><span class="skill">Excel</span><span class="skill">Power Query</span><span class="skill">SAP ERP</span><span class="skill">Data Quality</span></div></aside></div></div></section>
+ <section id="proyectos" class="projects"><div class="wrap"><div class="section-kicker">Portafolio</div><h2 class="section-heading">Proyectos seleccionados</h2><p class="section-intro">Seis casos que reflejan distintas competencias: automatización, SQL, análisis comercial, conciliación y visualización. Cada tarjeta resume el reto y el valor del trabajo; los detalles están en sus repositorios.</p><div class="project-grid">
+  <article class="project-card featured"><div class="project-top"><span class="category">Python · Automatización</span><span class="highlight">Proyecto reciente</span></div><h3>Payroll Analytics | Control de descuentos y saldos de nómina</h3><p>Automatización de la identificación de escenarios, aplicación de validaciones y cálculo de saldos para apoyar la revisión de remuneraciones.</p><div class="skills"><span class="skill">Python</span><span class="skill">pandas</span><span class="skill">NumPy</span><span class="skill">Tableau</span></div><p class="insight"><strong>Resultado:</strong> 6.604 registros analizados, 272 casos con acción sugerida o revisión y reducción del tiempo medido de 70 a 2 minutos (97,1 %), sin incluir la revisión manual posterior.</p><div class="card-actions"><a class="btn btn-primary" href="https://github.com/DayaRodriguezM/payroll-analytics-control-descuentos" target="_blank" rel="noopener noreferrer">Repositorio ↗</a><a class="btn btn-secondary" href="https://public.tableau.com/views/PayrollAnalyticsControldedescuentosysaldosdenmina/Dashboard1" target="_blank" rel="noopener noreferrer">Dashboard ↗</a></div></article>
+  <article class="project-card"><div class="project-top"><span class="category">SQL · Calidad de datos</span></div><h3>Uber 2024 | Data Quality &amp; Profitability</h3><p>Auditoría y preparación de datos transaccionales para analizar rentabilidad y desempeño de campañas sobre información consistente.</p><div class="skills"><span class="skill">SQL Server</span><span class="skill">CTEs</span><span class="skill">Data Quality</span></div><p class="insight"><strong>Hallazgo:</strong> 1.224 registros duplicados detectados; el tratamiento de inconsistencias evitó distorsiones en los indicadores de rentabilidad.</p><div class="card-actions"><a class="btn btn-primary" href="https://github.com/DayaRodriguezM/uber-2024-sql-data-quality-profitability" target="_blank" rel="noopener noreferrer">Repositorio ↗</a></div></article>
+  <article class="project-card"><div class="project-top"><span class="category">Analítica comercial</span></div><h3>RappiPlus LATAM | Rentabilidad y comportamiento de clientes</h3><p>Análisis de márgenes, funnel de conversión, retención por cohortes y pruebas A/B para identificar oportunidades de mejora comercial.</p><div class="skills"><span class="skill">Python</span><span class="skill">SQL</span><span class="skill">Tableau</span></div><p class="insight"><strong>Enfoque:</strong> convertir datos transaccionales y de comportamiento en recomendaciones sobre rentabilidad, conversión y retención.</p><div class="card-actions"><a class="btn btn-primary" href="https://github.com/DayaRodriguezM/rappiplus-dashboard-rentabilidad-tableau" target="_blank" rel="noopener noreferrer">Repositorio ↗</a></div></article>
+  <article class="project-card"><div class="project-top"><span class="category">Conciliación · Procesos</span></div><h3>Gestión y conciliación de anticipos</h3><p>Integración de solicitudes con información SAP para identificar diferencias, duplicados y excepciones en el proceso de pago.</p><div class="skills"><span class="skill">Excel</span><span class="skill">SAP ERP</span><span class="skill">Power BI</span><span class="skill">Tableau</span></div><p class="insight"><strong>Valor:</strong> controles y trazabilidad para facilitar la conciliación y el seguimiento de solicitudes.</p><div class="card-actions"><a class="btn btn-primary" href="https://github.com/DayaRodriguezM/gestion-conciliacion-anticipos" target="_blank" rel="noopener noreferrer">Repositorio ↗</a></div></article>
+  <article class="project-card"><div class="project-top"><span class="category">Business Intelligence</span></div><h3>Dashboard Comercial Regional 2024–2025</h3><p>Tablero de análisis comercial con indicadores de ingresos, márgenes y desempeño por país, categoría y producto.</p><div class="skills"><span class="skill">Power BI</span><span class="skill">DAX</span><span class="skill">Tableau</span></div><p class="insight"><strong>Alcance:</strong> más de 58.000 transacciones analizadas para detectar patrones y oportunidades de mejora.</p><div class="card-actions"><a class="btn btn-primary" href="https://github.com/DayaRodriguezM/dashboard-desempeno-comercial-tableau" target="_blank" rel="noopener noreferrer">Repositorio ↗</a></div></article>
+  <article class="project-card"><div class="project-top"><span class="category">BI · Real Estate</span></div><h3>Andes Capital Real Estate | Análisis comercial inmobiliario</h3><p>Evaluación de ventas, comportamiento de clientes, estacionalidad y desempeño por ubicación y tipo de propiedad.</p><div class="skills"><span class="skill">Power BI</span><span class="skill">Tableau</span><span class="skill">Power Query</span></div><p class="insight"><strong>Enfoque:</strong> identificar segmentos y zonas relevantes para apoyar decisiones comerciales.</p><div class="card-actions"><a class="btn btn-primary" href="https://github.com/DayaRodriguezM/dashboard-desempeno-inmobiliario-tableau" target="_blank" rel="noopener noreferrer">Repositorio ↗</a></div></article>
+ </div></div></section>
+ <section id="contacto" class="cta"><div class="wrap"><div class="panel"><div class="section-kicker">Conectemos</div><h2 class="section-heading">Datos que se convierten en soluciones.</h2><p>¿Quieres conocer más sobre mis proyectos o conversar sobre oportunidades de Data Analytics y Business Intelligence?</p><div class="actions" style="justify-content:center"><a class="btn btn-primary" href="https://github.com/DayaRodriguezM" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a class="btn btn-secondary" href="https://www.linkedin.com/in/dayanarodriguezmendez/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></div></div></section>
+</main>
+<footer><div class="wrap"><span>© 2026 Dayana Rodríguez · Portafolio de Data Analytics</span><span>Construido con HTML y CSS · Publicado en GitHub Pages</span></div></footer>
+</body>
+</html>
